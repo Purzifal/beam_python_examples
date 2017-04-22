@@ -19,10 +19,10 @@ NOTE: All these examples are very basic for their functions and is not ment to b
 # Requirements
 
 **Python:** 3.4  
-**Libraries:** websocket-client
-  * **Windows:** pip install websocket-client
-  * **linux:** sudo pip3 install websocket-client
+**Libraries:** websocket-client, requests_oauthlib
+  * **Windows:** pip install *library_name*
+  * **linux:** sudo pip3 install *library_name*
   
 # Run
 * **Windows:** python *filename*.py
-* **Linux:** python3 *beam_chat*.py
+* **Linux:** python3 *filename*.py
