@@ -1,5 +1,5 @@
-# python_basic_beam_chat
-A very basic beam chat bot
+# beam_python_examples
+Examples on how to do stuff with Beam
 
 # Config
 you will need edit the config.py with your own information
@@ -20,9 +20,9 @@ NOTE: All these examples are very basic for their functions and is not ment to b
 
 **Python:** 3.4  
 **Libraries:** websocket-client, requests_oauthlib
-  * **Windows:** pip install *library_name*
-  * **linux:** sudo pip3 install *library_name*
+  * **Windows:** pip install setup.py
+  * **Raspberry Pi:** sudo pip3 install setup.py
   
 # Run
 * **Windows:** python *filename*.py
-* **Linux:** python3 *filename*.py
+* **Raspberry Pi:** python3 *filename*.py
