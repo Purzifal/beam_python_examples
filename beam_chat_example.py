@@ -41,7 +41,7 @@ def random_chat_endpoint(endpoints):
     return endpoints[rnd]
 
 def message(msg, method):
-    """Sends a chat message."""
+    '''Sends a chat message.'''
     # if msg is not a list then make it a list
     if not isinstance(msg, list):
         msg = [msg]
@@ -77,7 +77,7 @@ def connect_chat():
     # create auth payload
     payload = [udata['channel']['id'],
                udata['channel']['userId'],
-               chatinfo["authkey"]]
+               chatinfo['authkey']]
 
     # send auth payload to the connected server
     message(payload, 'auth')
@@ -97,7 +97,7 @@ def run():
     WS.close()
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     LOOP = asyncio.get_event_loop()
 
     try:
