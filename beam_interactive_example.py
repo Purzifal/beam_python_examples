@@ -1,4 +1,4 @@
-"""Move the mouse based on Beam Interactive controls."""
+'''Move the mouse based on Beam Interactive controls.'''
 
 import asyncio
 from math import isnan
@@ -7,13 +7,6 @@ from beam_interactive import start, proto
 import config
 
 CONFIG = config
-
-
-BEAM_URI = "https://beam.pro/api/v1/"
-URL_INTERACIVE = "interactive/{channel}/robot"
-USERSCURRENT_URI = 'users/current'
-CLIENTID = 'REPLACE_WITH_YOUR_CLIENT_ID'
-CODE = 'REPLACE_WITH_YOUR_OAUTH_ACCESS_TOKEN'
 
 def _buildurl(path):
     return CONFIG.BEAM_URI + path
@@ -31,7 +24,7 @@ def userdata():
 
 
 def join_interactive(channel):
-    """Retrieve interactive connection information."""
+    '''Retrieve interactive connection information.'''
     # Create Data for request
     data = dict(client_id=CONFIG.CLIENT_ID)
     # Creates the header for the request
@@ -43,37 +36,37 @@ def join_interactive(channel):
 
 
 def on_error(error):
-    """Handle error packets."""
-    print("Oh no, there was an error!", error.message)
+    '''Handle error packets.'''
+    print('Oh no, there was an error!', error.message)
 
 
 def on_report(report):
-    """Handle report packets."""
+    '''Handle report packets.'''
 
     # Tactile Mouse Click Control
     for tactile in report.tactile:
         if tactile.pressFrequency:
-            print("Tactile report received!", tactile, sep='\n')
+            print('Tactile report received!', tactile, sep='\n')
 
     # Joystick Mouse Movement Control
     for joystick in report.joystick:
         if not isnan(joystick.coordMean.x) and not isnan(joystick.coordMean.y):
-            print("Joystick report received!", joystick, sep='\n')
+            print('Joystick report received!', joystick, sep='\n')
 
 
 
 @asyncio.coroutine
 def run():
-    """Run the interactive app."""
+    '''Run the interactive app.'''
 
     # Get the channel ID
-    channel_id = userdata()["channel"]["id"]
+    channel_id = userdata()['channel']['id']
 
     # Get Interactive connection information.
     data = join_interactive(channel_id)
 
     # Initialize a connection with Interactive.
-    connection = yield from start(data["address"], channel_id, data["key"])
+    connection = yield from start(data['address'], channel_id, data['key'])
 
     # Handlers, to be called when Interactive packets are received.
     handlers = {
@@ -93,14 +86,14 @@ def run():
         if packet_id in handlers:
             handlers[packet_id](decoded)
         elif decoded is None:
-            print("Unknown bytes were received. Uh oh!", packet_id)
+            print('Unknown bytes were received. Uh oh!', packet_id)
         else:
-            print("We got packet {} but didn't handle it!".format(packet_id))
+            print('We got packet {} but didn\'t handle it!'.format(packet_id))
 
     connection.close()
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     LOOP = asyncio.get_event_loop()
 
     try:
