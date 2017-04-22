@@ -1,0 +1,63 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: rgb(10, 6, 23);
+  overflow: hidden;
+}
+
+.bg-video {
+  width: 100%;
+}
+
+.content {
+  background:rgba(0,0,0,0.3);
+  border: 3px solid #0891c5;
+  border-radius: 25px 0;
+  padding: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  width: 500px;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+.logo2 {
+  width: 250px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.code {
+  background: rgba(8, 145, 197,0.4);
+  padding: 16px 32px;
+  border: 2px solid #0891c5;
+  border-radius: 10px 0;
+  font-family: "Orbitron", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+  color: #3fc9e1;
+}
+
+.hint {
+  text-align: center;
+  color: white;
+  font-size: 14px;
+  font-weight: 200;
+  font-family: "Orbitron", sans-serif;
+  margin-top: 20px;
+}
