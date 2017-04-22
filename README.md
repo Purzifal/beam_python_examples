@@ -1,5 +1,5 @@
 # beam_python_examples
-Examples on how to do stuff with Beam
+Examples on how to do stuff with Beam in python
 
 # Config
 you will need edit the config.py with your own information
