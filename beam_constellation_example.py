@@ -32,18 +32,28 @@ def connect_constellation():
     # Sets the header for the server connection
     header = ['authorization: Bearer {}'.format(CONFIG.ACCESS_TOKEN),
               'x-is-bot: True']
-    
+
     # Connect to beam Constellation server with header
     WS.connect('wss://constellation.beam.pro/', header=header)
 
     # Setup the subscruption events that you would like info on
-    sub = 'channel:{id}:hosted'.format(id=get_user_data()['channel']['id'])
+    sub = ['channel:{id}:hosted', 'channel:{id}:followed', 'channel:{id}:subscribed',
+           'channel:{id}:resubscribed']
 
-    # construct the payload
-    payload = {'type': 'method', 'method': 'livesubscribe',
-               'params': {'events': [sub]}, 'id': 0}
-    # Send the payload
-    WS.send(dumps(payload))
+    # packet ID counter
+    packetid = 0
+
+    # loops though sub list
+    for items in sub:
+        # construct the payload
+        payload = {'type': 'method', 'method': 'livesubscribe',
+                   'params': {'events': [items.format(id=get_user_data()['channel']['id'])]},
+                   'id': 0}
+
+        # adds 1 to packetid
+        packetid += 1
+        # Send the payload
+        WS.send(dumps(payload))
 
 @asyncio.coroutine
 def run():
