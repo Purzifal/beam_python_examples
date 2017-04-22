@@ -9,7 +9,7 @@
 
     <div class="content">
       <img class="logo" src="/images/beam.png">
-      <div class="code"><?php echo $_GET["code"]; ?></div>
+      <div class="code"><?php echo htmlspecialchars($_GET['code']); ?></div>
       <div class="hint">Please copy the above shortcode in full and paste it into the app<br> This will allow it to connect to communicate with Beam's services</div>
     </div>
   </body>
