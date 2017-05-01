@@ -1,4 +1,8 @@
-'''Move the mouse based on Beam Interactive controls.'''
+'''
+Gets data from Beam Interactive and outputs to console
+
+Based on old version of beam interactive example and updated
+'''
 
 import asyncio
 from math import isnan

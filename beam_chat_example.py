@@ -1,4 +1,8 @@
-''' A very basic chat bot '''
+'''
+A very basic chat bot using asyncio
+
+If running on windows, run the command, chcp 65001
+'''
 
 import asyncio
 from json import dumps, loads

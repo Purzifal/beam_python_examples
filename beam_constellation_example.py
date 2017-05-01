@@ -1,4 +1,6 @@
-'''An example of Beam Constellation'''
+'''
+An example of Beam Constellation
+'''
 
 import asyncio
 from json import dumps, loads

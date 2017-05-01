@@ -1,4 +1,6 @@
-''' interact with Beam API and get access token information '''
+'''
+Interact with Beam API and get access token information
+'''
 
 from datetime import datetime, timedelta
 import webbrowser
