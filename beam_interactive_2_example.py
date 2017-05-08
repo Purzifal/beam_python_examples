@@ -38,7 +38,7 @@ def _random_endpoint(endpoint):
 
 @asyncio.coroutine
 def message(msg):
-    '''Sends a chat message.'''
+    '''Sends a message to the interactive 2.0 server.'''
     # send the packet to the data
     WS.send(dumps(msg))
 
