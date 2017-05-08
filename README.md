@@ -11,8 +11,9 @@ There are examples that cover certain aspects of the services offered by beam.pr
 
 * **OAuth** - getting access token data
 * **Chat** - connect to chat and send a message
-* **Interactive** - connect to the channel interactive and recieve packet data
-* **Constellation** - connect to Beam's Constellation server and subscribe to liveloading events
+* **Interactive 1** - connect to the channel interactive and recieve packet data (Soon to be depreciated)
+* **Interactive 2.0** - Connect to channel interactive 2 and recieve event data
+* **Constellation** - Connect to Beam's Constellation server and subscribe to liveloading events
 
 NOTE: All these examples are very basic for their functions and is not ment to be the all in 1 solution.
 
