@@ -15,7 +15,7 @@ There are examples that cover certain aspects of the services offered by beam.pr
 * **Interactive 2.0** - Connect to channel interactive 2 and recieve event data
 * **Constellation** - Connect to Beam's Constellation server and subscribe to liveloading events
 
-NOTE: All these examples are very basic for their functions and is not ment to be the all in 1 solution.
+NOTE: All these examples are very basic for their functions and is not ment to be the all in 1 solution. You will need to add your own code if you want to combine things together. I will not do this for you
 
 # Requirements
 
